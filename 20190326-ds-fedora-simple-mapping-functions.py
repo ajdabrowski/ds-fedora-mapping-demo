@@ -270,6 +270,13 @@ def create_path(path_elements):
 ## RDF dictionary format: {rdf_predicate_uri:{'subject': '', 'object_list': [], 'object_type': rdf_object_type}}
 ## RDF object type values: 'uri', string_literal', 'datetime_literal', 'integer_literal', 'decimal_literal'
 
+# Example SPARQL request body for a container in Fedora:
+# INSERT {   
+#   <> <http://purl.org/dc/elements/1.1/date> "2018-12-22T09:32:02.030-06:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+#   <> <http://purl.org/dc/elements/1.1/creator> "AD", "AN" .
+# }
+# WHERE {}
+
 # Formats a SPAQRL request body according to request type, 
 # currently only functions with a default of insert request
 def create_sparql_request(rdf_dict, ld_rdf_dict, request_type='insert'):
